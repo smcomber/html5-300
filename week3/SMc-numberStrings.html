@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Numbers and Strings | Seth McOmber</title>
+<script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h2>Numbers and Strings form by Seth McOmber</h2>
+<div class="container">
+    <header>
+    <h3>Enter a number or text:</h3>
+        <form id="numberForm">
+            <textarea id="theEntry"></textarea>
+            <input type="button" id="resetInput" value="clear">
+            <input type="button" id="sumbit" value="submit">
+        </form>
+    </header>
+    <div class="resultsArea">
+        <div class="resultsBox">
+            <p>Number values:</p>
+            <div class="placeHolder" id="numberEntry">&nbsp;</div>
+        </div>
+        <div class="resultsBox">
+            <p>Number count:</p>
+            <div class="placeHolder" id="numberQuantity">&nbsp;</div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="resultsBox">
+            <p>Number Sum:</p>
+            <div class="placeHolder" id="numberSum">&nbsp;</div>
+        </div>
+        <div class="resultsBox">
+            <p>Number average:</p>
+            <div class="placeHolder" id="numberAverage">&nbsp;</div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="resultsBox">
+            <p>Text:</p>
+            <div class="placeHolder" id="textConcat">&nbsp;</div>
+        </div>
+        <div class="resultsBox">
+            <p>Text string count:</p>
+            <div class="placeHolder" id="textQuantity">&nbsp;</div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<footer>
+    <input type="button" id="resetValue" value="Reset">
+</footer>
+<script src="scripts/numberString.js"></script>
+</body>
+</html>
+
+
+
+
+
+

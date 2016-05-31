@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Final project | Seth McOmber</title>
+<script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+</head>
+
+<body>
+<form>
+  <label for="household">Household/family size</label>
+  <select name="household" id="household">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8 or more</option>
+  </select>
+  <label for="income">Annual income</label>
+  <input type="number" id="income" class="inputNumber" placeholder="11770" min="11700" max="70620">
+  </div>
+  <input type="submit" id="getRate" value="Find your rate">
+  <input type="button" id="clear" value="clear">
+</form>
+<div class="display">
+    Income level: <span id="levelDisplay"></span> of federal poverty guideline
+</div>
+<div class="display">
+Hourly rate: <span id="rateDisplay"></span> per hour
+</div>
+<script src="scripts/scale.js"></script>
+<script src="scripts/tableData.js"></script>
+</body>
+</html>

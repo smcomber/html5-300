@@ -1,0 +1,109 @@
+@charset "UTF-8";
+/* CSS Document */
+* {
+	box-sizing:border-box;
+}
+.clearfix {
+	float:none;
+	clear:both;
+}
+body {
+	font-family:"Arial Narrow", helvetica, arial, sans-serif;
+	font-size:16px;
+	color:#4c3f2e;
+	width:70%;
+	min-width:500px;
+	margin:30px auto;
+	background:#B2CDA5;
+	
+}
+.container {
+	background:#fcf9f3;
+	padding:15px 15px 20px;
+}
+h2 {
+	width:100%;
+	color:#fff;
+	padding:5px 15px;
+	background:#4c3f2e;
+	margin:0;
+}
+h3 {
+	margin:10px 0;
+	border-bottom:1px solid;
+}
+.hideItem {
+	display:none;
+}
+.showItem {
+	display:block;
+}
+.showItem div {
+    width: 45%;
+    display: inline-block;
+}
+table {
+	width:100%;
+}
+th {
+    background: #4c3f2e;
+    width: 25%;
+    padding: 5px;
+    text-transform: uppercase;
+    color: #fff;
+	box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
+}
+td.data {
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
+    background: #fff;
+    padding: 5px 5px 5px 10px;
+	transition:background 500ms;
+}
+input[type="submit"] {
+	font-size:16px;
+	margin:20px 5px 0;
+	text-transform:uppercase;
+	font-family:"Arial Narrow", helvetica, arial, sans-serif;
+	background: #fff;
+    border-radius: 5px;
+}
+input.addNew:hover, input#addItem:hover, input#cancelAdd:hover, input#editItem:hover, input#cancelEdit:hover {
+    cursor: pointer;
+	background:#E5E19D;
+	transition:background 200ms;
+}
+input[type="text"], input[type="number"]  {
+	font-family:"Arial Narrow", helvetica, arial, sans-serif;
+	font-size:16px;
+	width:90%;
+	margin:0 0 15px;
+}
+label {
+    display: block;
+}
+.itemRow:hover td.data {
+    background:#E5E19D;
+}
+.btn input:hover {
+    cursor: pointer;
+}
+.td.btn {
+	padding:0 5px;
+}
+td.btn .btn {
+	font-size:.8rem;
+	background:#fff;
+	border-radius:5px;
+	padding:2px 5px;
+	margin:0 5px;
+	transition:background 200ms, box-shadow 200ms;
+	width:100%;
+	text-align:center;
+	box-shadow:0px 0px 1px rgba(0,0,0,0.3);
+	font-family:helvetica, arial, sans-serif;
+}
+td.btn:hover .btn {
+    cursor: pointer;
+	background:#E5E19D;
+	box-shadow:0px 0px 4px rgba(0,0,0,0.5);
+}

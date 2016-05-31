@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Map | Seth McOmber</title>
+<script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h2>Map by Seth McOmber</h2>
+<div id="map" class="mapContainer"></div>
+<div class="container">
+	<h3>Find public fishing access sites</h3>
+    <article>
+    	<div class="leftList">
+            <ul>
+                <li><a class="fishBtn" id="goBosworth"><span class="icon"></span>Bosworth Lake</a></li>
+                <li><a class="fishBtn" id="goMargaret"><span class="icon"></span>Lake Margaret</a></li>
+                <li><a class="fishBtn" id="goBenHoward"><span class="icon"></span>Ben Howard</a></li>
+                <li><a class="fishBtn" id="goSalmonDrive"><span class="icon"></span>Salmon Drive</a></li>
+            </ul>
+        </div>
+        <div class="rightList">
+            <ul>
+                <li><a class="fishBtn" id="goBlackCreek"><span class="icon"></span>Black Creek</a></li>
+                <li><a class="fishBtn" id="goEdgewater"><span class="icon"></span>Edgewater Park</a></li>
+                <li><a class="fishBtn" id="goBonney"><span class="icon"></span>BonneyLake</a></li>
+                <li><a class="fishBtn" id="goPoint"><span class="icon"></span>Point No Point</a></li>
+            </ul>
+        </div>
+    </article>
+    <aside>
+        <form>
+        <h4>Zoom:</h4>
+        <a id="plusZoom" class="zoomBtn"><i class="fa fa-search-plus" aria-hidden="true"></i></a>
+        <a id="minusZoom" class="zoomBtn"><i class="fa fa-search-minus" aria-hidden="true"></i></a>
+        <input type="number" id="zoom">
+        <a id="submitZoom">Set manual zoom</a>
+        <a id="resetZoom">Reset zoom</a>
+        </form>
+    </aside>
+    <div class="clearfix"></div>
+</div>
+<footer>
+    <a class="resetBtn reset" id="goCenter">Reset map</a>
+</footer>
+<script src="scripts/maps.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDSj0TCPwjVAzy5Jy9Q6g_3UKjYoxyidE&callback=initMap"
+    async defer></script>
+</body>
+</html>
+
+
+
+
+
+
+
+

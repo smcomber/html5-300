@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Object List | Seth McOmber</title>
+<script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h2>Object List by Seth McOmber</h2>
+<div class="container">
+    <div id="formEntry" class="hideItem">
+        <h3>Add an album</h3>
+        	<form>
+        	<div>
+        	<label for="inputText1">Artist</label>
+            <input type="text" id="inputText1" class="inputTextAll" placeholder="Artist">
+            </div>
+            <div>
+            <label for="inputText2">Album</label>
+            <input type="text" id="inputText2" class="inputTextAll" placeholder="Album">
+            </div>
+            <div>
+            <label for="inputText3">Release year</label>
+            <input type="text" id="inputText3" class="inputTextAll" placeholder="Release year">
+            </div>
+            <input type="submit" id="addItem" value="submit">
+            </form>
+    </div>
+    <div id="dataDisplay" class="showItem">
+    	<h3>Album list</h3>
+        <table>
+        	<thead>
+            	<th>Artist</th>
+                <th>Album</th>
+                <th>Release year</th>
+            </thead>
+            <tbody id="objectBody">
+            </tbody>
+        </table>
+        <form>
+        <input type="submit" id="addNew" value="Add New" class="addNew">
+        </form>
+    </div>
+</div>
+<script src="scripts/objectList.js"></script>
+</body>
+</html>
+
+
+
+
+
+

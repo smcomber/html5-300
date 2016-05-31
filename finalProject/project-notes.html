@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sliding scale notes | Seth McOmber</title>
+<style>
+* {
+	box-sizing:border-box;
+}
+.clearfix {
+	clear:both;
+	display:block;
+}
+body {
+	font-family:"Arial Narrow", helvetica, arial, sans-serif;
+	font-size:16px;
+	color:#4c3f2e;
+	width:70%;
+	min-width:500px;
+	margin:30px auto;
+	background:#B2CDA5;
+}
+a:link, a:visited, a:focus, a:active {
+	color:#566c11;
+}
+a:hover {
+	color:#90b603;
+}
+.notesWrapper {
+	width:80%;
+	margin:0 auto 20px;
+	background:#fcf9f3;
+	padding:5px 20px 20px;
+}
+h2 {
+	width:80%;
+	color:#fff;
+	padding:5px 15px;
+	background:#4c3f2e;
+	margin:0 auto;
+	font-size:1.8rem;
+}
+h3 {
+	font-size:1.5rem;
+	border-bottom:1px dotted;
+	padding-bottom:3px;
+}
+img {
+    width: 50%;
+    margin: 0 25%;
+}
+code {
+	display:block;
+    background: #fff;
+    clear: both;
+    padding: 5px 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+	font-size:14px;
+}
+</style>
+<script src="https://use.fontawesome.com/b4b3a0a28d.js"></script>
+</head>
+
+<body>
+<h2>Sliding scale notes</h2>
+<div class="notesWrapper">
+  <a href="sliding-scale.html">Go to project</a>
+<h3><i class="fa fa-question-circle" aria-hidden="true"></i> The problem</h3>
+<p>I'm building a website for a local non-profit organization. They offer legal services on a sliding rate scale, dependent on the client's household size and income. They asked to include a table which dispalys the various rates according to the client's income and household size. The information is all there, but it's not very user-friendly in this form. </p>
+<img src="income-table.jpg"/>
+<h3><i class="fa fa-lightbulb-o" aria-hidden="true"></i> The idea</h3>
+<p>My goal with this project was to build a better way for users to get their customized rate information. Instead of a static table, I wanted to create a responsive interface where users could enter their income and household size and be shown the corresponding rate without scanning over numbers that don't apply to them.</p>
+<h3><i class="fa fa-cogs" aria-hidden="true"></i> The process</h3>
+<p>Before crafting a user interface, I needed to get my javascript to work. I started with a very bare-bones sytem - a drop-down input for household size and a text input field for annual income. It didn't look pretty, but it worked! </p>
+<p>I considered using math to calculate the rate for the given inputs, but the organization doesn't use an exact formula (they round here and there), so exact math results wouldn't match their table. Instead I hard-coded the income levels in nested if/then statements like so:
+<code>
+if ( household == 1 ) {<br>
+		if ( income >= 11770 && income < 17655 ) {<br>
+			var incomeLevel = 1;<br>
+			};<br>
+            if ( income >= 17655 && income < 20598 ) {<br>
+			var incomeLevel = 1.5;<br>
+			};<br>
+		if ( income >= 20598 && income < 23540 ) {<br>
+			var incomeLevel = 1.75;<br>
+			};<br>
+            etc.
+</code> 
+<p>Entering this data was rather tedious (over 400 lines of code!), and not the best long-term solution since the table will need to be updated annually, but it works for now. To keep this data out of the way while I wrote out the functions, I saved off a separate js file and linked to both.</p>
+<p>The var <b>incomeLevel</b> corresponds to the percentage of the federal povery level, so I set this percentage to match an hourly rate like this:
+<code>
+function figureRate( incomeLevel ) {<br>
+	if ( incomeLevel == 1 ) {<br>
+		var yourRate = 0;<br>
+		};
+</code>
+So, an annual income at 100% of the federal poverty level would qualify for an hourly rate of $0.</p>
+<p>To clean up the displayed results, I borrowed a regex from StackOverflow to insert commas into the income:
+<code>
+var commaNum = $('output#income').val();<br>
+	var updateNum = ( formatNumber ( commaNum ) );<br>
+function formatNumber ( num ) {<br>
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+}
+</code>
+</p>
+<p>As a finishing touch, to make my page align with the table data, I added an if/then statement to display the household number of 8 as "8 or more". I did this by adding class <b>orMore</b> to that element:
+<code>
+if ( householdNum == 8 ) {<br>
+		$('output#household').addClass( 'orMore' );<br>
+	}<br>
+	else {<br>
+		$('output#household').removeClass( 'orMore' );<br>
+	}
+    </code>
+    ...and then using a CSS pseudo class to append the text:
+    <code>
+    .orMore:after {<br>
+	content:" or more";
+}
+    </code>
+<h3><i class="fa fa-sliders" aria-hidden="true"></i> The challenges</h3>
+<p>I really wanted the rate info returned without the user having to click a button. I figured a range slider would be the best option for this, but I had a hard time getting the native HTML 5 slider to respond in the way I wanted. Some googling brought me to a jquery plugin called <a href="http://rangeslider.js.org/" target="_blank">rangeslider</a>. I ended up tweaking the plugin quite a bit, to the point where it may have taken just as long to write the code myself and apply it to the native HTML rangeslider, but I had already gone down the plugin route, so I stuck with that method.</p>
+<p>Another challenege arose because each household number has a unique minimum and maximum income level. Using conditional statments, I set the income slider to update its min and max whenever the user changes the household number. Like this: <br>
+<code>var setHousehold = $( '#household' ).val();<br>
+	if ( setHousehold >= 1 && setHousehold < 2 ){<br>
+		$( '#income' ).val('11770');<br>
+		$( '#incomeRange' ).attr( { 'min':11770, 'max':70620 } );<br>
+	};</code>
+    The id <b>#income</b> displays the income as a number (the minimum of each range), while <b>#incomeRange</b> refers to the slider input element.</p>
+    <p>
+    This change affected the UI, becuase now it needed to be clearer that the user should set their houshold size BEFORE setting their income, otherwise the income limits might not make sense.</p>
+<h3><i class="fa fa-smile-o" aria-hidden="true"></i> The outcome &#38; next steps</h3>
+<p>I'm proud of the results. I acheived my goal of only providing the user with useful numbers.</p>
+<p>Eventually, I'd like to explore using math to reach the income levels. This way, as the poverty level changes each year, the only tweak to the code is to reset this level and let the js take care of calculating the minimums and maximums.</p>
+<p>To get super-fancy, I could add an input to handle this number (the federal poverty level) so that the organization can make this update on their own without needing to crack open code.</p>
+<p>I'm especially happy to have created a tool which will soon be put to use in the real world. Once it's tested and approved by the organization, I'll post it live for the world to see.</p>
+</body>
+</html>

@@ -1,0 +1,125 @@
+@charset "UTF-8";
+/* CSS Document */
+* {
+	box-sizing:border-box;
+}
+a {
+	cursor:pointer;
+}
+.clearfix {
+	float:none;
+	clear:both;
+}
+body {
+	font-family:"Arial Narrow", helvetica, arial, sans-serif;
+	font-size:16px;
+	color:#4c3f2e;
+	width:70%;
+	min-width:500px;
+	margin:30px auto;
+	background:#B2CDA5;
+}
+.container {
+	background:#fcf9f3;
+	padding:15px 20px;
+}
+h1 {
+	width:100%;
+	color:#fff;
+	padding:5px 15px;
+	background:#4c3f2e;
+	margin:0;
+	font-size:2rem;
+}
+h2 {
+    margin: 0 0 20px;
+    padding-bottom: 2px;
+	text-align:center;
+	font-size:1.5rem;
+}
+h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: normal;
+}
+ul {
+    margin: 0;
+	padding:0;
+    list-style-type: none;
+}
+.outerBox {
+	position:relative;
+	width:100%;
+	border:2px solid #4c3f2e;
+	height:600px;
+	background:#fff;
+	overflow:hidden;
+}
+.object {
+	position:absolute;
+	text-align:center;
+	padding:15px;
+	color:#fff;
+	font-weight:bold;
+	text-transform:uppercase;
+	box-shadow:0px 0px 3px rgba(0,0,0,0.5);
+	text-shadow:0px 0px 3px rgba(0,0,0,0.5);
+}
+.object1 {
+	top:20px;
+	left:20px;
+	width:20%;
+	height:20%;
+	background:#6a9bca;
+}
+.object2 {
+	top:65%;
+	left:65%;
+	width:15%;
+	height:15%;
+	background:#a72e37;
+}
+.grabby {
+	cursor:move;
+	box-shadow:0px 0px 8px rgba(0,0,0,0.8);
+}
+
+.leftList, .rightList {
+	width:49%;
+}
+.leftList {
+	float:left;
+}
+.rightList {
+	float:right;
+}
+footer {
+	text-align:center;
+	padding:10px 15px;
+	background:#4c3f2e;
+}
+
+@-webkit-keyframes throb {
+	from {background:rgba(0,0,0,0.6);}
+	to {background:rgba(0,0,0,0.7);}
+}
+@-moz-keyframes throb {
+	from {background:rgba(0,0,0,0.6);}
+	to {background:rgba(0,0,0,0.7);}
+}
+@keyframes throb {
+	from {background:rgba(0,0,0,0.6);}
+	to {background:rgba(0,0,0,0.7);}
+}
+@-webkit-keyframes fishRotate {
+	from {-webkit-transform: rotate(20deg);}
+	to {-webkit-transform: rotate(-10deg);}
+}
+@-moz-keyframes fishRotate {
+	from {-moz-transform: rotate(20deg);}
+	to {-moz-transform: rotate(-10deg);}
+}
+@keyframes fishRotate {
+	from {transform: rotate(20deg);}
+	to {transform: rotate(-10deg);}
+}

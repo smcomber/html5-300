@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sliding scale | Seth McOmber</title>
+<script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+<link rel="stylesheet" href="styles/scaleStyles.css">
+</head>
+<body>
+<div class="scaleWrapper">
+	<h2>Rate scale tool</h2>
+    <h3>Set your household size</h3>
+  <div class="column-1 slider">
+    <p>Household/family size: <output id="household">1</output></p>
+    <input type="range" data-orientation="vertical" min="1" max="8" id="householdRange" value="1">
+    <div id="householdSize"></div>
+  </div>
+  <h3>Set your annual household income</h3>
+  <div class="column-1 slider">
+    <p>Household income: <output id="income">11,770</output></p>
+    <input type="range" data-orientation="vertical" step="10" min="11700" max="70620" id="incomeRange" value="11700">
+  </div>
+  <div class="column-1">
+    <div class="display levelDisplay">
+    	<p class="finePrint">We serve clients whose household income falls between 100% and 600% of the federal poverty level.</p>
+    	<p class="trans">Your household income level is <span id="levelDisplay">100%</span> of the federal poverty guideline.</p>
+    </div>
+    <div class="display rateDisplay">You qualify for an hourly rate of <br>
+      <span id="rateDisplay">$0</span> per hour </div>
+  </div>
+  <div class="clearfix"></div>Go to project notes</a>
+</div>
+<script src="scripts/rangeslider.js"></script> 
+<script src="scripts/scale.js"></script> 
+<script src="scripts/tableData.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+@charset "UTF-8";
+/* CSS Document */
+@-webkit-keyframes throb {
+	from {background:rgba(0,0,0,0.6);}
+	to {background:rgba(0,0,0,0.7);}
+}
+@-moz-keyframes throb {
+	from {background:rgba(0,0,0,0.6);}
+	to {background:rgba(0,0,0,0.7);}
+}
+@keyframes throb {
+	from {background:rgba(0,0,0,0.6);}
+	to {background:rgba(0,0,0,0.7);}
+}
+@-webkit-keyframes fishRotate {
+	from {-webkit-transform: rotate(20deg);}
+	to {-webkit-transform: rotate(-10deg);}
+}
+@-moz-keyframes fishRotate {
+	from {-moz-transform: rotate(20deg);}
+	to {-moz-transform: rotate(-10deg);}
+}
+@keyframes fishRotate {
+	from {transform: rotate(20deg);}
+	to {transform: rotate(-10deg);}
+}
+* {
+	box-sizing:border-box;
+}
+a {
+	cursor:pointer;
+}
+.clearfix {
+	float:none;
+	clear:both;
+}
+body {
+	font-family:"Arial Narrow", helvetica, arial, sans-serif;
+	font-size:16px;
+	color:#4c3f2e;
+	width:70%;
+	min-width:500px;
+	margin:30px auto;
+	background:#B2CDA5;
+	
+}
+article {
+	width:65%;
+	float:left;
+}
+aside {
+	width:30%;
+	float:right;
+}
+.container {
+	background:#fcf9f3;
+	padding:15px 20px;
+}
+h2 {
+	width:100%;
+	color:#fff;
+	padding:5px 15px;
+	background:#4c3f2e;
+	margin:0;
+}
+h3 {
+    margin: 0 0 20px;
+    border-bottom: 1px dotted;
+    padding-bottom: 2px;
+	text-align:center;
+}
+h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
+    border-bottom: 1px dotted;
+}
+ul {
+    margin: 0;
+	padding:0;
+    list-style-type: none;
+}
+.mapContainer {
+	height:300px;
+	width:100%;
+	margin:0 auto;
+}
+.leftList, .rightList {
+	width:49%;
+}
+.leftList {
+	float:left;
+}
+.rightList {
+	float:right;
+}
+.fishBtn {
+    background: rgba(73,63,46,0.6);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 0 0 8px;
+    line-height: 1.5;
+	width:100%;
+	transition:background 300ms;
+}
+.fishBtn:hover {
+	background: rgba(73,63,46,1);
+}
+.fishBtn.selected {
+	-webkit-animation:throb 2s ease-in-out infinite alternate;
+	-moz-animation:throb 2s ease-in-out infinite alternate;
+	animation:throb 2s ease-in-out infinite alternate;
+}
+.resetBtn {
+    display: block;
+    background: #fff;
+    color: #4c3f2e;
+    border: 2px solid #4c3f2e;
+	border-radius: 5px;
+    text-align: center;
+    width: 40%;
+    margin: 0 auto;
+	line-height:1;
+	padding:5px 10px;
+	transition:background 300ms;
+}
+.resetBtn:hover {
+	background:rgba(255,255,255,0.5);
+	color:#fff;
+}
+.icon {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    background: url('../images/iconFish.png') no-repeat;
+    background-size: 25px;
+    margin-right:10px;
+	float:left;
+	-webkit-transition:-webkit-transform 300ms;
+	-moz-transition:-moz-transform 300ms;
+	transition:transform 300ms;
+}
+.fishBtn:hover .icon {
+	-webkit-transform: rotate(20deg);
+	-moz-transform: rotate(20deg);
+	transform: rotate(20deg);
+}
+.fishBtn.selected .icon {
+	-webkit-animation:fishRotate 2s ease-in-out infinite alternate;
+	-moz-animation:fishRotate 2s ease-in-out infinite alternate;
+	animation:fishRotate 2s ease-in-out infinite alternate;
+}
+form {
+    text-align: center;
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+	border:1px solid rgba(73,63,46,0.7);
+}
+input[type="number"] {
+    font-family: helvetica, sans-serif;
+    font-size: 24px;
+    display: block;
+    margin: 10px auto 5px;
+    font-weight: bold;
+    text-align: center;
+    width: 30%;
+    background: rgba(73,63,46,0.7);
+    color: #fff;
+	border:none;
+	border-radius:5px;
+	transition:background 300ms;
+}
+input[type="number"]:hover {
+	background: rgba(73,63,46,1);
+}
+.zoomBtn {
+    padding: 4px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    font-size: 24px;
+    background: rgba(73,63,46,0.7);
+    color: rgba(255,255,255,1);
+    margin: 10px 5px;
+	transition:background 300ms;
+}
+.zoomBtn:hover {
+	background:rgba(73,63,46,1);
+}
+#submitZoom, #resetZoom {
+	margin:10px 0 5px;
+	display:block;
+}
+#submitZoom:hover, #resetZoom:hover {
+	text-decoration:underline;
+}
+footer {
+	text-align:center;
+	padding:10px 15px;
+	background:#4c3f2e;
+}

@@ -1,0 +1,98 @@
+@charset "UTF-8";
+* {
+	box-sizing:border-box;
+}
+.clearfix {
+	clear:both;
+	display:block;
+}
+body {
+	font-family:"Arial Narrow", helvetica, arial, sans-serif;
+	font-size:16px;
+	color:#4c3f2e;
+	width:70%;
+	min-width:500px;
+	margin:30px auto;
+	background:#B2CDA5;
+}
+h2 {
+	width:100%;
+	color:#fff;
+	padding:5px 15px;
+	background:#4c3f2e;
+	margin:0;
+	font-size:1.8rem;
+}
+h3 {
+	font-size:1.2rem;
+    margin: 15px 5% 5px;
+}
+.scaleWrapper {
+	width:80%;
+	margin:20px auto;
+	background:#fcf9f3;
+	padding-bottom:20px;
+}
+.column-1 {
+	width:80%;
+	margin:0 auto;
+	clear:both;
+	text-align:center;
+	
+}
+.column-2 {
+	width:40%;
+	margin:15px 5%;
+	float:left;
+	padding:10px;
+	text-align:center;
+	font-weight:bold;
+}
+.display {
+	margin:0 0 15px;
+}
+#levelDisplay {
+	font-weight:bold;
+}
+.rateDisplay {
+	width:50%;
+	margin:10px auto;
+	background:#fff;
+	box-shadow:0px 0px 3px rgba(0,0,0,0.5);
+	padding:10px 20px;
+}
+#rateDisplay {
+	font-size:3em;
+	font-weight:bold;
+	display:block;
+}
+output {
+    font-weight: bold;
+}
+output#income:before {
+	content:'$';
+}
+output#income:after {
+	content:' per year';
+}
+.orMore:after {
+	content:" or more";
+}
+.finePrint {
+	font-size:0.8rem;
+}
+.slider {
+	font-size:1.2rem;
+	background:#fff;
+	box-shadow:0px 0px 3px rgba(0,0,0,0.5);
+	padding:10px;
+}
+.slider p {
+	margin:0;
+}
+.slider input {
+	width:80%;
+}
+.trans {
+	visibility:hidden;
+}
